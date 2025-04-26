@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4X Projetos | Engenharia e Arquitetura</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://kit.fontawesome.com/a2d9a66f9c.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gradient-to-br from-white to-gray-100 text-gray-800 transition-all duration-500">
+  <!-- Header -->
+  <header class="relative overflow-hidden bg-lux text-white py-12 animate-fade-in">
+    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');"></div>
+    <div class="relative container mx-auto px-4 text-center">
+      <div class="logo">
+        <img src="img/4x-logo.png" alt="Logo 4X Projetos" class=" w-44 drop-shadow-lg tamanho">
+        <h1 class=" mt-4 tracking-tight">PROJETOS</h1>
+      </div>
+      <p class="text-lg mt-2 italic">Excelência em Engenharia e Arquitetura</p>
+    </div>
+  </header>
+
+  <!-- Sobre -->
+  <section class="py-14 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-semibold mb-6 text-lux">Sobre o Escritório</h2>
+      <p class="text-lg mb-2">📍 <strong>Rua General Rondon, 160</strong>, Pinheiros - ES, 29980-000</p>
+      <p class="text-sm text-gray-500 mb-8">Ao lado da loja Mundo Agro</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="https://wa.me/5527995790221" class="bg-gradient-to-tr from-green-50 to-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition border border-lux block">
+          <h3 class="font-semibold text-xl text-lux">Wanderlan Xavier</h3>
+          <p class="text-gray-600">Arquiteto</p>
+          <p class="text-sm mt-2 text-gray-500">📞 (27) 99579-0221</p>
+        </a>
+        <a href="https://wa.me/5527997903673" class="bg-gradient-to-tr from-green-50 to-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition border border-lux block">
+          <h3 class="font-semibold text-xl text-lux">Lucas Gabriel Riva</h3>
+          <p class="text-gray-600">Engenheiro Civil</p>
+          <p class="text-sm mt-2 text-gray-500">📞 (27) 99790-3673</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="py-16 bg-gray-50 animate-fade-in" x-data="{ open: null }">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-semibold text-center mb-8 text-lux">Nossos Serviços</h2>
+      <div class="space-y-4">
+        <template x-for="(servico, index) in [
+          {titulo: 'Projetos de arquitetura e engenharia', descricao: 'Desenvolvimento completo de projetos para construção e reforma.'},
+          {titulo: 'Licenciamento ambiental', descricao: 'Documentações e processos para viabilização ambiental.'},
+          {titulo: 'Loteamentos e condomínios', descricao: 'Planejamento urbano e implantação de áreas residenciais.'},
+          {titulo: 'PSCIP – Segurança Contra Incêndio', descricao: 'Planos e projetos conforme normas do Corpo de Bombeiros.'},
+          {titulo: 'Planejamento urbano', descricao: 'Estudos e projetos para o crescimento sustentável das cidades.'},
+          {titulo: 'Captação de recursos públicos', descricao: 'Projetos técnicos para acessar verbas federais e estaduais.'},
+          {titulo: 'Regularização fundiária', descricao: 'Legalização de propriedades de acordo com a legislação vigente.'},
+          {titulo: 'Consultoria técnica especializada', descricao: 'Acompanhamento técnico para tomadas de decisão.'}
+        ]" :key="index">
+          <div class="border border-lux rounded-xl bg-white p-4 shadow hover:shadow-md transition cursor-pointer" @click="open === index ? open = null : open = index">
+            <h3 class="font-medium text-lg text-lux" x-text="servico.titulo"></h3>
+            <p class="text-sm text-gray-600 mt-2" x-show="open === index" x-transition x-text="servico.descricao"></p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfólio -->
+  <section class="py-16 bg-white text-center animate-fade-in">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-semibold mb-4 text-lux">Portfólio</h2>
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Projeto ilustrativo" class="mx-auto rounded-xl shadow-lg mb-6">
+      <p class="text-gray-600 text-lg">Em breve traremos imagens dos nossos projetos finalizados. Acompanhe nossas atualizações!</p>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 text-center max-w-xl">
+      <h2 class="text-3xl font-semibold mb-6 text-lux">Contato</h2>
+      <div class="flex justify-center space-x-6 text-2xl mb-4">
+        <a href="https://instagram.com/4xprojetos" class="text-lux hover:text-gray-700"><i class="fab fa-instagram"></i> @4xprojetos</a>
+        <a href="https://wa.me/5527997903673" class="text-lux hover:text-gray-700"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <p class="mb-1 text-gray-700 texto">
+        <img src="img/whatsapp.png" alt="">
+        <a href="https://wa.me/5527995790221" class="hover:underline" target="_blank">Wanderlan Xavier: (27) 99579-0221</a>
+      </p>
+
+      <p class="text-gray-700 texto">
+        <img src="img/whatsapp.png" alt="">
+        <a href="https://wa.me/5527997903673" class="hover:underline" target="_blank">Lucas Gabriel Riva: (27) 99790-3673</a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 border-t border-lux">
+    <p class="text-sm text-gray-400">© 2025 4X Projetos. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
